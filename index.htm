@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Mario 64</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #1b1b1b;
+      color: #ff4500;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 2px solid #ff4500;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    main h2 {
+      color: #ff4500;
+    }
+
+    main p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      background-color: #000;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 1em;
+      color: white;
+      background-color: #ff4500;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #e03e00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1b1b1b;
+      color: #ccc;
+      border-top: 2px solid #ff4500;
+    }
+
+    /* Scroll back to top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #ff4500;
+      color: white;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 50px;
+      display: none;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #e03e00;
+    }
+
+    @media (max-width: 768px) {
+      iframe { height: 400px; }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2em; }
+      main p { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Super Mario 64</h1>
+  </header>
+
+  <main>
+    <h2>Play Super Mario 64</h2>
+    <p>
+      Enjoy a browser-based version of <strong>Super Mario 64</strong>. Explore Peach's castle, collect Power Stars, and relive the classic 3D platformer experience directly in your browser.
+    </p>
+
+    <button onclick="changeTitle()">Make Tab about:blank</button>
+
+    <iframe src="https://3xpsmjs.pages.dev/start" title="Super Mario 64 Browser Game"></iframe>
+  </main>
+
+  <footer>
+    &copy; 2025 Nintendo & Game Project. All Rights Reserved.
+  </footer>
+
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- Background music -->
+  <audio id="bgSound" autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Scroll back to top button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    // Background sound volume
+    const audio = document.getElementById("bgSound");
+    audio.volume = 0.5;
+
+    // Change tab title to about:blank
+    function changeTitle() {
+      document.title = "about:blank";
+    }
+  </script>
+</body>
+</html>
